@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>TO DO LIST📝</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+          
+    <body>
+        <div class="container"></div>
+        <div class="todo-app"> </div>
+        <h2>TO DO LIST📝</h2>
+        <input id="input">
+    
+<button onclick="add()">Add</button>
+<ul id="list-container">
+    <li>learn python
+        <button onclick="deleteItem(event)">Delete</button>
+    </li>
+</ul>
+   
+<script>
+    //selecting ul
+    var ul=document.getElementById("list-container")
+    var input=document.getElementById("input")
+    function add()
+    {
+      var listitem=document.createElement("li")
+      listitem.innerHTML=input.value + "<button onclick='deleteItem(event)'>Delete</button>"
+      ul.append(listitem)
+    }
+
+    function deleteItem(event)
+    {
+        event.target.parentElement.remove()
+    }
+    
+</script>
+
+    </body>
+</html>
+
+
+
